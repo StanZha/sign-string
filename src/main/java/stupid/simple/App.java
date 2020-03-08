@@ -34,10 +34,10 @@ public class App {
         // sign string
         byte[] signatureBytes = app.signStringWithPrivateKey(signature, keyPair.getPrivate(), plainText);
 
-        System.out.println("Signature:" + Base64.getEncoder().encodeToString(signatureBytes));
+        System.out.printf("Signature: %s\n", Base64.getEncoder().encodeToString(signatureBytes));
 
         // verify string
-        System.out.println("Data is same: " + app.verifySignedString(signature, keyPair.getPublic(), signatureBytes, plainTextToBeVerified));
+        System.out.printf("Data is same: %s\n", app.verifySignedString(signature, keyPair.getPublic(), signatureBytes, plainTextToBeVerified));
     }
 
     /*
